@@ -1,0 +1,348 @@
+**Exercicios de fixação** 
+
+
+
+**EX01**
+
+Código:
+
+if (num > 0) {
+
+&#x20;   return "Positivo";
+
+&#x20; } else if (num < 0) {
+
+&#x20;   return "Negativo";
+
+&#x20; } else {
+
+&#x20;   return "Zero";
+
+&#x20; }
+
+}
+
+
+
+
+
+console.log(verificarNumero(5));
+
+console.log(verificarNumero(-3));
+
+console.log(verificarNumero(0));
+
+
+
+
+
+Saída:
+
+Positivo
+
+Negativo
+
+Zero
+
+
+
+**EX02**
+
+Código:
+
+const calcularDobro = (num) => num \* 2;
+
+
+
+
+
+console.log(calcularDobro(5));
+
+console.log(calcularDobro(7));
+
+console.log(calcularDobro(10));
+
+
+
+Saída:
+
+10
+
+14
+
+20
+
+
+
+**EX03**
+
+Código:
+
+function criarContador() {
+
+&#x20; let count = 0;
+
+&#x20; return function() {
+
+&#x20;   count++;
+
+&#x20;   return count;
+
+&#x20; };
+
+}
+
+
+
+const contador1 = criarContador();
+
+console.log(contador1());
+
+console.log(contador1());
+
+
+
+
+
+const contador2 = criarContador();
+
+console.log(contador2());
+
+console.log(contador2());
+
+
+
+Saída:
+
+1
+
+2
+
+1
+
+2
+
+
+
+
+
+**EX04**
+
+Código:
+
+function Pessoa(nome, idade) {
+
+&#x20; this.nome = nome;
+
+&#x20; this.idade = idade;
+
+&#x20; this.apresentar = function() {
+
+&#x20;   return "Olá, meu nome é " + this.nome + " e tenho " + this.idade + " anos";
+
+&#x20; };
+
+}
+
+
+
+
+
+const pessoa1 = new Pessoa("Ana", 25);
+
+const pessoa2 = new Pessoa("João", 30);
+
+
+
+console.log(pessoa1.apresentar());
+
+console.log(pessoa2.apresentar());
+
+
+
+Saída:
+
+Olá, meu nome é Ana e tenho 25 anos
+
+Olá, meu nome é João e tenho 30 anos
+
+
+
+**EX05**
+
+Código:
+
+function calculadora(num1, num2, operacao) {
+
+&#x20; if (operacao === "soma") return num1 + num2;
+
+&#x20; if (operacao === "subtracao") return num1 - num2;
+
+&#x20; if (operacao === "multiplicacao") return num1 \* num2;
+
+&#x20; if (operacao === "divisao") return num1 / num2;
+
+&#x20; return "Operação inválida";
+
+}
+
+
+
+console.log(calculadora(10, 5, "soma"));
+
+console.log(calculadora(10, 5, "subtracao"));
+
+console.log(calculadora(10, 5, "multiplicacao"));
+
+
+
+Saída:
+
+15
+
+5
+
+50
+
+
+
+
+
+**EX06**
+
+Código:
+
+function saudacao(nome = "Visitante", idioma = "pt") {
+
+&#x20; if (idioma === "pt") return "Olá, " + nome + "!";
+
+&#x20; if (idioma === "en") return "Hello, " + nome + "!";
+
+&#x20; if (idioma === "es") return "Hola, " + nome + "!";
+
+&#x20; return "Idioma não suportado";
+
+}
+
+
+
+
+
+console.log(saudacao("Ana", "pt"));
+
+console.log(saudacao("John", "en"));
+
+console.log(saudacao("Carlos", "es"));
+
+console.log(saudacao());
+
+
+
+
+
+Saída:
+
+Olá, Ana!
+
+Hello, John!
+
+Hola, Carlos!
+
+Olá, Visitante!
+
+
+
+**EX07**
+
+Código:
+
+function processarArray(array, callback) {
+
+&#x20; let resultado = \[];
+
+&#x20; for (let i = 0; i < array.length; i++) {
+
+&#x20;   resultado.push(callback(array\[i]));
+
+&#x20; }
+
+&#x20; return resultado;
+
+}
+
+
+
+const numeros = \[1, 2, 3, 4, 5];
+
+const dobrar = (num) => num \* 2;
+
+
+
+console.log(JSON.stringify(processarArray(numeros, dobrar)));
+
+
+
+
+
+Saída:
+
+\[2, 4, 6, 8, 10]
+
+
+
+**EX08**
+
+Código:
+
+function criarPessoa(nome, idade, cidade) {
+
+&#x20; return {
+
+&#x20;   nome: nome,
+
+&#x20;   idade: idade,
+
+&#x20;   cidade: cidade,
+
+&#x20;   exibir: function() {
+
+&#x20;     return "Nome: " + this.nome + ", Idade: " + this.idade + ", Cidade: " + this.cidade;
+
+&#x20;   }
+
+&#x20; };
+
+}
+
+
+
+
+
+const pessoa1 = criarPessoa("Ana", 25, "São Paulo");
+
+const pessoa2 = criarPessoa("João", 30, "Rio de Janeiro");
+
+const pessoa3 = criarPessoa("Maria", 22, "Belo Horizonte");
+
+
+
+
+
+console.log(pessoa1.exibir());
+
+console.log(pessoa2.exibir());
+
+console.log(pessoa3.exibir());
+
+
+
+Saída:
+
+Nome: Ana, Idade: 25, Cidade: São Paulo
+
+Nome: João, Idade: 30, Cidade: Rio de Janeiro
+
+Nome: Maria, Idade: 22, Cidade: Belo Horizonte
+
+
+
